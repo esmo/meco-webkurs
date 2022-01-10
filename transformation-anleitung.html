@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CSS-Transformationen - Anleitung</title>
+    <link href="css/prism.css" rel="stylesheet" />
+    <link href="css/anleitung.css" rel="stylesheet" />
+    <script src="js/he.js"></script>
+    <script src="js/anleitung.js"></script>
+    <script src="js/prism.js"></script>
+
+    <style>
+      .beispiel-ausgabe {
+        height: 300px;
+      }
+
+      .beispiel-ausgabe .overlay {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+      .beispiel-ausgabe .layer1 div {
+        opacity: 0.5;
+      }
+      .beispiel-ausgabe .layer1,
+      .beispiel-ausgabe .layer2 {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        height: 300px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .beispiel-ausgabe .layer1 div,
+      .beispiel-ausgabe .layer2 div {
+        width: 100px;
+        height: 100px;
+        background-color: #009999;
+        border: 1px solid black;
+      }
+      .beispiel-ausgabe .skew {
+        transform: skew(10deg, 20deg);
+      }
+
+      .beispiel-ausgabe .translate {
+        transform: translate(-20px, 30px);
+      }
+
+      .beispiel-ausgabe .rotate {
+        transform: rotate(50deg);
+      }
+
+      .beispiel-ausgabe .scale {
+        transform: scale(0.5, 2);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>CSS-Transformationen</h1>
+    </header>
+    <main>
+      <article>
+        <h2>Was sind Transformationen?</h2>
+        <p>
+          Mit CSS-Transformationen werden HTML-Elemente mit Hilfe von CSS
+          verschoben, gedreht, skaliert oder verzerrt. Das folgende Beispiel
+          zeigt diese vier Transformations-Möglichkeiten anhand von 4 Quadraten.
+        </p>
+        <h3>CSS</h3>
+        <pre>
+          <code class="language-css">
+            .skew {
+              /* Die Stärke der Verzerrung wird im Bogenmaß (0-360 Grad) angegeben,
+              jeweils für die Höhe und die Breite. */
+              transform:skew(10deg,20deg)
+            }
+
+            .translate {
+              /* Verschiebung von nach rechts und nach unten,
+              negative Werte verschieben nach links bzw. nach oben. */
+              transform:translate(-20px, 30px);
+            }
+
+            .rotate {
+              /* Die Rotierung wird auch im Bogenmaß angegeben. */
+              transform:rotate(50deg)
+            }
+
+            .scale {
+              /* Die beiden Werte bei der Skalierung stehen für horizontal und vertikal.
+              Ein Wert von 1 entspricht der Originalgröße */
+              transform:scale(0.5,2)
+            }
+
+        </code>
+      </pre>
+        <h3>HTML</h3>
+        <pre>
+        <code class="language-html">
+          <div class="skew">
+            Verzerrung (skew)
+          </div>
+          <div class="translate">
+            Verschiebung (translate)
+          </div>
+          <div class="rotate">
+            Drehung (rotate)
+          </div>
+          <div class="scale">
+            Skalierung (scale)
+          </div>
+        </code>
+      </pre>
+
+        <h3>Ausgabe</h3>
+        <div class="beispiel-ausgabe">
+          <div class="overlay">
+            <div class="layer1">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="layer2">
+              <div class="skew">
+                Verzerrung (skew)
+              </div>
+              <div class="translate">
+                Verschiebung (translate)
+              </div>
+              <div class="rotate">
+                Drehung (rotate)
+              </div>
+              <div class="scale">
+                Skalierung (scale)
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

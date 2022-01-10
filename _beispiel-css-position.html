@@ -1,0 +1,75 @@
+<style>
+  div {
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+  }
+
+  /* relativ positioniert: Der Platz des Element auf der Seite bleibt erhalten, es wird relativ von dort verschoben */
+
+  .second {
+    position: relative;
+    top: -10px;
+    left: 10px;
+  }
+
+  /* absolut positioniert: Das Element wird aus dem Seitenfluss genommen und frei auf der Seite positioniert. */
+
+  .third {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  /*Ist das Eltern-Element nicht statisch positioniert (also z.B. relativ), dann...*/
+
+  .outer {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: #0000aa;
+  }
+
+  /*... orientiert sich das absolut positionierte Kind-Element am Eltern-Element, und nicht mehr an der gesamten Seite.*/
+
+  .inner {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    background-color: #00aa00;
+  }
+
+  /*
+AUFGABE: Positioniere ein Kind-Element genau zentiert in einem Eltern-Element.
+Du erreichst das, indem Du den Abstand in alle Richtungen gleich machst (am besten möglichst klein) und den Aussenabstand automatisch berechnen lässt (margin:auto)
+*/
+
+  .inner {
+    /* ergänze die notwendigen Anweisungen */
+    margin: auto;
+  }
+</style>
+
+<h1>
+  Die CSS-Eigenschaft <q>position</q>
+
+  <div class="first">
+    first
+  </div>
+
+  <div class="second">
+    second
+  </div>
+
+  <div class="third">
+    third
+  </div>
+
+  <div class="fourth">
+    fourth
+  </div>
+
+  <div class="outer">
+    <div class="inner"></div>
+  </div>
+</h1>

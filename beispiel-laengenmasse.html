@@ -1,0 +1,70 @@
+<style>
+  div {
+    border: 1px solid black;
+  }
+
+  /* Beispiele für absolute Maßangaben */
+
+  .inch {
+    width: 1in;
+    height: 1in;
+  }
+
+  .pica {
+    width: 6pc;
+    height: 6pc;
+  }
+
+  .point {
+    width: 72pt;
+    height: 72pt;
+  }
+
+  .centimeter {
+    width: 2.54cm;
+    height: 2.54cm;
+  }
+
+  .pixel {
+    width: 96px;
+    height: 96px;
+  }
+
+  /* Beispiele für relative Maßangaben */
+
+  .margin-outer {
+    width: 500px;
+    height: 200px;
+  }
+
+  .margin-inner {
+    width: 25%;
+    height: 25%;
+    /* Die Angabe bezieht sich bei margin immer auf die Breite des Eltern-Elements! */
+    margin-top: 25%;
+    font-size: 20px;
+    margin-left: 2.5em;
+  }
+</style>
+
+<h1>Längenmaße in CSS</h1>
+
+<div class="inch">
+  1 Inch
+</div>
+<div class="pica">
+  6 Pica
+</div>
+<div class="point">
+  72 Punkt
+</div>
+<div class="centimeter">
+  2,54 Zentimeter
+</div>
+<div class="pixel">
+  96 Pixel
+</div>
+
+<div class="margin-outer">
+  <div class="margin-inner"></div>
+</div>

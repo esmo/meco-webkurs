@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Float - Anleitung</title>
+    <link href="css/prism.css" rel="stylesheet" />
+    <link href="css/anleitung.css" rel="stylesheet" />
+    <script src="js/he.js"></script>
+    <script src="js/anleitung.js"></script>
+    <script src="js/prism.js"></script>
+    <style media="screen">
+      /* Angabe für ein links gefloatetes Element */
+      .beispiel-ausgabe.beispiel1 .left-floated {
+        float: left;
+      }
+      /* Angabe für ein rechts gefloatetes Element */
+      .beispiel-ausgabe.beispiel1 .right-floated {
+        float: right;
+      }
+
+      /* Textgröße ändern, damit der Text über mehrere Zeilen läuft.  */
+      .beispiel-ausgabe.beispiel1 .bigtext {
+        font-size: 4em;
+        line-height: 1em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Float</h1>
+      <h2>Umfließender Text</h2>
+    </header>
+    <main>
+      <p>
+        Mit der Eigenschaft <code class="language-css">float</code> können
+        Elemente so gestaltet werden, dass sie von anderen Elementen "umflossen"
+        werden. So kann beispielsweise Fließtext um Bilder oder andere Elemente
+        realisiert werden.
+      </p>
+      <p>
+        Mit <code class="language-css">float: left</code> wird festgelegt, dass
+        das Element links vom umfließenden Inhalt steht, also rechts umflossen
+        wird. Entsprechendes gilt für
+        <code class="language-css">float: right</code>
+      </p>
+      <p>
+        Es kann notwendig sein, das Umfließen für ein spezifisches Element
+        aufzuheben. Das geschieht mit der Eigenschaft
+        <code class="language-css">clear: left</code>,
+        <code class="language-css">clear: right</code>, oder
+        <code class="language-css">clear: both</code>.
+      </p>
+      <h3>CSS</h3>
+      <pre>
+        <code class="language-css">
+          /* Angabe für ein links gefloatetes Element */
+          .left-floated {
+            float: left;
+          }
+
+          /* Angabe für ein rechts gefloatetes Element */
+          .right-floated {
+            float: right;
+          }
+
+          /* Textgröße ändern, damit der Text über mehrere Zeilen läuft.  */
+          .bigtext {
+            font-size: 4em;
+            line-height: 1em;
+          }
+
+        </code>
+      </pre>
+      <h3>HTML</h3>
+      <pre>
+        <code class="language-html">
+          <span class="left-floated bigtext">Lorem</span> ipsum dolor sit amet, consectetur
+          adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Integer malesuada nunc vel risus commodo viverra maecenas accumsan. Enim sed faucibus
+          turpis in eu mi bibendum neque. Tempus urna et pharetra pharetra massa massa ultricies.
+          Lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque. Consequat mauris
+          nunc congue nisi vitae suscipit tellus mauris a.
+          In mollis nunc <span class="right-floated bigtext">vulputate</span> sed id semper risus
+          in hendrerit gravida. Velit laoreet id donec ultrices tincidunt arcu non. Amet nisl
+          suscipit adipiscing bibendum est ultricies. Risus feugiat in ante metus dictum at tempor
+          commodo. Ac odio tempor orci dapibus ultrices in iaculis. Amet dictum sit amet justo donec
+          enim diam vulputate ut. Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada.
+          Vel pharetra vel turpis nunc.
+        </code>
+      </pre>
+      <h3>Ausgabe</h3>
+      <div class="beispiel-ausgabe beispiel1">
+        <div>
+          <span class="left-floated bigtext">Lorem</span> ipsum dolor sit amet,
+          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+          labore et dolore magna aliqua. Integer malesuada nunc vel risus
+          commodo viverra maecenas accumsan. Enim sed faucibus turpis in eu mi
+          bibendum neque. Tempus urna et pharetra pharetra massa massa
+          ultricies. Lorem ipsum dolor sit amet consectetur adipiscing elit
+          pellentesque. Consequat mauris nunc congue nisi vitae suscipit tellus
+          mauris a. In mollis nunc
+          <span class="right-floated bigtext">vulputate</span> sed id semper
+          risus in hendrerit gravida. Velit laoreet id donec ultrices tincidunt
+          arcu non. Amet nisl suscipit adipiscing bibendum est ultricies. Risus
+          feugiat in ante metus dictum at tempor commodo. Ac odio tempor orci
+          dapibus ultrices in iaculis. Amet dictum sit amet justo donec enim
+          diam vulputate ut. Eleifend donec pretium vulputate sapien nec
+          sagittis aliquam malesuada. Vel pharetra vel turpis nunc.
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

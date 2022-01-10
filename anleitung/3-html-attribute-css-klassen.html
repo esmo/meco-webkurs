@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML und CSS</title>
+    <link href="../css/prism.css" rel="stylesheet" />
+    <link href="../css/anleitung.css" rel="stylesheet" />
+    <script src="../js/he.js"></script>
+    <script src="../js/anleitung.js"></script>
+    <script src="../js/prism.js"></script>
+    <style media="screen">
+      .beispiel-ausgabe.beispiel1 h1 {
+        color: blue;
+      }
+
+      .beispiel-ausgabe.beispiel1 p {
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>HTML-Attribute und CSS-Selektoren</h1>
+    </header>
+    <main>
+      <p>
+        HTML-Elemente können Attribute haben. Attribute stellen zusätzliche
+        Informationen zu Elementen bereit. Sie werden immer öffnenden Teil des
+        HTML-Tags angegeben. Ein Beispiel für die Attribute <em>class</em> und
+        <em>id</em> in einer Überschrift könnte so aussehen:
+      </p>
+      <pre>
+        <code class="language-html">
+          <h1 class="beispiel-klasse1 beispiel-klasse2" id="beispiel-id">
+            Beispiel-Überschrift
+          </h1>
+        </code>
+      </pre>
+
+      <p>
+        Die Attribute <code class="language-hmtl">class</code> und
+        <code class="language-hmtl">id</code> haben eine spezielle Bedeutung.
+        Sie können in CSS als Selektoren verwendet werden und haben dort eine
+        besondere Schreibweise:
+      </p>
+      <ul>
+        <li>
+          Für das <em>class</em>-Attribut wird einfach der gewünschte Wert mit
+          einem Punkt davor geschrieben, also bspw.
+          <code class="language-css">.beispiel-klasse</code>
+        </li>
+        <li>
+          Für das <em>id</em>-Attribut wird der gewünschte Wert mit einem
+          Hash-Zeichen (#) davor geschrieben, also bspw.
+          <code class="language-css">#beispiel-id</code>
+        </li>
+      </ul>
+      <p>
+        Die beiden Attribute <em>class</em> und <em>id</em> unterschieden sich
+        in einigen Punkten.
+      </p>
+      <ul>
+        <li>
+          <mark>Ein <em>class</em>-Attribut kann mehrere Werte haben</mark> .
+          Diese werden dann einfach mit Leerzeichen getrennt hintereinander
+          geschrieben.
+          <mark
+            >Die Werte können bei mehreren HTML-Elementen auf einer Seite
+            verwendet werden</mark
+          >.
+        </li>
+        <li>
+          Anders ist es bei <em>id</em>-Attributen:
+          <mark
+            >Ein <em>id</em>-Attribut darf nur einen Wert haben, und dieser Wert
+            darf nur einmal in dem HTML-Dokument vorkommen</mark
+          >.
+        </li>
+      </ul>
+
+      <p>
+        Ein id-Attribut dient also dazu, ein HTML-Element in einem HTML-Dokument
+        eindeutig zu identifizieren. Eine class-Attribut hingegen dient dazu,
+        mehrere HTML-Elemente zu gruppieren, also zu einer Klasse
+        zusammenzufassen.
+      </p>
+      <h3>CSS</h3>
+      <pre>
+        <code class="language-css">
+
+          /* Mit der folgenden CSS-Anweisung wird die Schriftfarbe für die
+          HTML-Elemente mit der Klasse "beispiel-klasse" blau */
+          .beispiel-klasse {
+            color: blue;
+          }
+
+          /* Mit der folgenden CSS-Anweisung wird die Schriftfarbe für das
+          HTML-Element mit der ID "beispiel-id" grün */
+          #beispiel-id {
+            color: green;
+          }
+
+        </code>
+      </pre>
+    </main>
+  </body>
+</html>

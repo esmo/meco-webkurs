@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML Grundlagen</title>
+    <link href="../css/prism.css" rel="stylesheet" />
+    <link href="../css/anleitung.css" rel="stylesheet" />
+    <script src="../js/he.js"></script>
+    <script src="../js/anleitung.js"></script>
+    <script src="../js/prism.js"></script>
+    <style media="screen"></style>
+  </head>
+
+  <body>
+    <header>
+      <h1>HTML</h1>
+      <h2>Grundlagen</h2>
+    </header>
+    <main>
+      <p>
+        Es gibt eine Vielzahl verschiedener HTML-Tags. Hier sind die ersten für
+        den Einstieg:
+      </p>
+      <h3>Überschriften</h3>
+      <p>
+        Für Überschriften gibt es insgesamt 6 Tags: h1 ist die Hauptüberschrift,
+        h6 die am wenigsten wichtige.
+      </p>
+      <pre>
+        <code class="language-html">
+          <h1>Das ist ein Beispiel für eine Überschrift erster Ordnung,
+            bspw. der Titel eines HTML-Dokuments.</h1>
+          <h2>Das ist ein Beispiel für eine Überschrift zweiter Ordnung.
+            Sie kann bspw. als Untertitel verwendet werden.</h2>
+          <h3>Das ist ein Beispiel für eine Überschrift dritter Ordnung.
+            Sie eignet sich bspw. für Zwischenüberschriften.</h3>
+          <h4>Das ist ein Beispiel für eine Überschrift vierter Ordnung.
+            Sie wird nur selten verwendet, ebenso wie die folgenden.</h4>
+          <h5>Das ist ein Beispiel für eine Überschrift fünfter Ordnung.</h5>
+          <h6>Das ist ein Beispiel für eine Überschrift sechster Ordnung.</h6>
+        </code>
+      </pre>
+      <p>So sehen die Überschriften aus:</p>
+      <div class="beispiel-ausgabe beispiel1">
+        <!-- Für Überschriften gibt es insgesamt 6 Tags: h1 bis h6.
+        h1 ist die wichtigste Überschrift, h6 die am wenigsten wichtige. -->
+        <h1>
+          Das ist ein Beispiel für eine Überschrift erster Ordnung, bspw. der
+          Titel eines HTML-Dokuments.
+        </h1>
+        <h2>
+          Das ist ein Beispiel für eine Überschrift zweiter Ordnung. Sie kann
+          bspw. als Untertitel verwendet werden.
+        </h2>
+        <h3>
+          Das ist ein Beispiel für eine Überschrift dritter Ordnung. Sie eignet
+          sich bspw. für Zwischenüberschriften.
+        </h3>
+        <h4>
+          Das ist ein Beispiel für eine Überschrift vierter Ordnung. Sie wird
+          nur selten verwendet, ebenso wie die folgenden.
+        </h4>
+        <h5>Das ist ein Beispiel für eine Überschrift fünfter Ordnung.</h5>
+        <h6>Das ist ein Beispiel für eine Überschrift sechster Ordnung.</h6>
+      </div>
+      <h3>Bilder und Links</h3>
+      <p>
+        Um Bilder und Links in eine Seite einzubinden, muss angegeben werden, wo
+        sich die Datei (also das Bild oder die verlinkte Datei) befindet, die
+        eingebunden werden soll. Das geschieht über <em>Attribute</em>, die im
+        öffnenden HTML-Tag notiert werden. Ein Attribut hat einen Namen und
+        einen Wert in der Form <code class="language-html">name="wert"</code>.
+      </p>
+      <pre>
+        <code class="language-html">
+          <!-- Für Bilder gibt es den HTML-Tag "img".
+          Hier muss die Bild-Datei über das Attribut
+          mit dem Namen "src" angegeben werden. -->
+          <img src="../img/bild.jpg" />
+
+          <!-- Für Links gibt es den HTML-Tag "a".
+          Hier muss die Ziel-Datei über das Attribut
+          mit dem Namen "href" angegeben werden. -->
+          <a href="index.html">Zurück zur Übersicht</a>
+
+        </code>
+      </pre>
+      <p>So wird das Bild und der Link dargestellt:</p>
+      <div class="beispiel-ausgabe beispiel1">
+        <!-- Für Bilder gibt es den HTML-Tag "img".
+        Hier muss die Bild-Datei über das Attribut "src" angegeben werden.
+      -->
+        <img src="../img/bild.jpg" />
+
+        <!-- Für Links gibt es den HTML-Tag "a".
+        Hier muss die Ziel-Datei über das Attribut "href" angegeben werden. -->
+        <a href="index.html">Zurück zur Übersicht</a>
+      </div>
+      <h3>Inline- und Block-Elemente</h3>
+      <p>
+        HTML-Elemente lassen sich danach unterscheiden, ob sie sich in den
+        Textfluß einfügen (<em>Inline</em>-Elemente), oder ob sie eine ganze
+        Zeile für sich beanspruchen (<em>Block</em>-Elemente).
+      </p>
+      <p>
+        Überschriften sind beispielsweise Block-Elemente - sie gehen immer vom
+        Anfang bis zum Ende der Zeile.
+      </p>
+      <p>
+        Links und Bilder, aber auch Markierungen sind Inline-Elemente. Sie fügen
+        sich in den aktuellen Textfluß ein.
+      </p>
+      <p>
+        Als generelle Regel gilt:
+        <mark
+          >Block-Elemente können Inline-Elemente enthalten, aber Inline-Elemente
+          können keine Block-Elemente enthalten.</mark
+        >
+      </p>
+      <p>Hier sind Beispiele für Block- und Inline-Elemente:</p>
+      <pre>
+        <code class="language-html">
+          <!-- Der HTML-Tag <p> markiert einen Textabsatz
+          und ist ein Block-Element, das immer die ganze Zeile einnimmt.
+          Innerhalb dieses Elements kann ein Link (<a>) vorkommen, denn
+          das ist ein Inline-Element, das sich in den Textfluß einfügt.
+         -->
+          <p>Das ist ein Text-Absatz (Block-Element) mit einem
+            <a href="index.html">Link zur Startseite</a> (Inline-Element).
+          </p>
+
+            <!--
+            <div> ist ein Block-Element. Seine Besonderheit ist,
+            dass es "generisch" ist, also keine besondere Bedeutung hat
+            und deswegen für alles Mögliche verwendet werden kann,
+            für das es keienn speziellen HTML-Tag gibt.
+            Das Gleiche gilt für <span>, ein generisches Inline-Element.
+          -->
+          <div>Dies ist ein generisches Block-Element, mit einem
+            <span>generischen Inline-Element</span>. Es ist an sich nicht
+            erkennbar, kann aber mit CSS gestaltet werden.
+          </div>
+        </code>
+      </pre>
+      <p>Und so sehen sie im Browser aus:</p>
+      <div class="beispiel-ausgabe beispiel1">
+        <!-- Der HTML-Tag <p> markiert einen Textabsatz
+        und ist ein Block-Element, das immer die ganze Zeile einnimmt.
+        Innerhalb dieses Elements kann ein Link (<a>) vorkommen, denn
+        das ist ein Inline-Element, das sich in den Textfluß einfügt.
+       -->
+        <p>
+          Das ist ein Text-Absatz (Block-Element) mit einem
+          <a href="index.html">Link zur Startseite</a> (Inline-Element).
+        </p>
+
+        <!--
+          <div> ist ein Block-Element. Seine Besonderheit ist,
+          dass es "generisch" ist, also keine besondere Bedeutung hat
+          und deswegen für alles Mögliche verwendet werden kann,
+          für das es keienn speziellen HTML-Tag gibt.
+          Das Gleiche gilt für <span>, ein generisches Inline-Element.
+        -->
+        <div>
+          Dies ist ein generisches Block-Element, mit einem
+          <span>generischen Inline-Element</span>. Es ist an sich nicht
+          erkennbar, kann aber mit CSS gestaltet werden.
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

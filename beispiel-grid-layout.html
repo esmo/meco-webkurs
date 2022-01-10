@@ -1,0 +1,83 @@
+<style>
+  /* Grid Item Column / Row */
+  .grid-column-row .grid-item {
+    border: 1px dotted black;
+  }
+
+  .grid-column-row .grid-item.a {
+    background-color: blue;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+  }
+
+  .grid-column-row .grid-item.b {
+    background-color: green;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+  }
+
+  .grid-column-row .grid-item.c {
+    background-color: grey;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 3;
+  }
+
+  .grid-column-row .grid-container {
+    display: grid;
+    grid-template-rows: 50px 100px 25px;
+    grid-template-columns: 50px auto 50px;
+  }
+
+  /* Grid template area */
+
+  .grid-template .grid-item {
+    border: 1px dotted black;
+  }
+
+  .grid-template .grid-item.a {
+    background-color: blue;
+    grid-area: header;
+  }
+
+  .grid-template .grid-item.b {
+    background-color: green;
+    grid-area: main;
+  }
+
+  .grid-template .grid-item.c {
+    background-color: grey;
+
+    grid-area: footer;
+  }
+
+  .grid-template .grid-container {
+    display: grid;
+    grid-template-rows: 50px 100px 25px;
+    grid-template-columns: 50px auto 50px;
+    grid-template-areas:
+      "header header header"
+      ". main ."
+      "footer footer footer";
+  }
+</style>
+
+<div class="grid-column-row">
+  <h1>Grid erstellt mit Grid column / row</h1>
+  <div class="grid-container">
+    <div class="grid-item a"></div>
+    <div class="grid-item b"></div>
+    <div class="grid-item c"></div>
+  </div>
+</div>
+
+<div class="grid-template">
+  <h1>Grid erstellt mit Grid template</h1>
+  <div class="grid-container">
+    <div class="grid-item a"></div>
+    <div class="grid-item b"></div>
+    <div class="grid-item c"></div>
+  </div>
+</div>

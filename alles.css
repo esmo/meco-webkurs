@@ -1,0 +1,193 @@
+/* Übersicht wichtiger CSS-Eigenschaften, sortiert nach Themen, mit default-Werten */
+
+/*  Eigenschaften mit Bezug zum Box Model */
+
+.box-model {
+  /* Größe und Abstände */
+  height: auto;
+  width: auto;
+  min-height: auto;
+  min-width: auto;
+  padding: 0;
+  margin: 0;
+
+  border-style: none;
+  border-width: medium;
+  border-radius: 0;
+
+  outline-style: none;
+  outline-width: medium;
+  outline-offset: 0;
+
+  box-sizing: content-box;
+  overflow: auto;
+  overflow-x: auto;
+  overflow-y: auto;
+  resize: none;
+  
+  /* Darstellung und Farben */
+  border-color: transparent;
+  outline-color: transparent;
+  background-color: transparent;
+  background-clip: border-box;
+  background-image: none;
+  background-position: 0% 0%; /* Nur sinnvoll in Verbindung mit background-image */
+  background-size: auto; /* Nur sinnvoll in Verbindung mit background-image */
+  background-repeat: repeat; /* Nur sinnvoll in Verbindung mit background-image */
+  background-origin: padding-box; /* Nur sinnvoll in Verbindung mit background-image */
+  background-attachment: scroll; /* Nur sinnvoll in Verbindung mit background-image */
+  border-image: none;
+  box-shadow: none;
+  opacity: 1;
+  visibility: visible;
+  filter: none;
+}
+
+/* Gestaltung von Text */
+
+.text {
+  font-family: initial;
+  font-size: normal;
+  line-height: normal;
+  font-weight: normal;
+  color: initial;
+
+  font-variant: normal;
+  font-kerning: auto;
+  font-stretch: normal;
+  letter-spacing: normal;
+
+  white-space: normal;
+  overflow: hidden;
+
+  text-indent: 0;
+  text-decoration: none;
+  text-overflow: clip; /* funktioniert nur mit white-space: nowrap; und overflow: hidden; */
+  text-shadow: none;
+  text-transform: none;
+  text-align: left;
+
+  vertical-align: baseline;
+
+  quotes: initial;
+  user-select: auto;
+  writing-mode: horizontal-tb;
+  /* Textrichtung (links nach rechts, rechts nach links) */
+  direction: ltr;
+  unicode-bidi: normal;
+
+  column-count: auto;
+  column-fill: auto;
+  column-gap: normal;
+  column-span: none;
+  column-width: auto;
+  column-rule-color: initial;
+  column-rule-style: none;
+  column-rule-width: medium;
+}
+
+/* Positionierung von Elementen im Seitenfluss */
+
+.position {
+  position: static;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: auto;
+  float: none;
+  clear: none;
+}
+
+/* Eigenschaften für Flexbox-Darstellung (dispay:flex) */
+
+.flexbox {
+  display: flex;
+  flex-basis: auto;
+  flex-direction: row;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  align-items: stretch;
+  align-self: auto;
+  justify-content: flex-start;
+}
+
+/* Eigenschaften für Grid-Darstellung (dispay:grid) */
+
+.grid {
+  grid-template-rows: none;
+  grid-template-columns: none;
+  grid-template-areas: none;
+  grid-auto-rows: auto;
+  grid-auto-columns: auto;
+  grid-auto-flow: row;
+
+  grid-row-gap: 0;
+  grid-column-gap: 0;
+}
+
+/* Eigenschaften für Tabellendarstellung */
+
+table {
+  table-layout: auto; /* 'fixed' für gleich große Spalten */
+  border-collapse: separate;
+  border-spacing: 0; /* funktioniert nur mit border-collapse: separate; */
+  caption-side: top;
+}
+
+.list {
+  list-style-type: disc;
+  list-style-image: none;
+  list-style-position: outside;
+}
+
+/* Eigenschaften zum Einpassen von Bildern und Videos */
+
+.bilder_und_videos {
+  object-fit: none;
+  object-position: 50% 50%;
+}
+
+._3d {
+  perspective: none;
+  perspective-origin: 50% 50%;
+}
+
+/* Mauszeiger (cursor) und Textcursor (caret) */
+.mauszeiger_und_textcursor {
+  cursor: auto;
+  pointer-events: auto;
+  caret-color: auto;
+}
+
+.transformation {
+  transform: none;
+  transform-style: flat;
+  transform-origin: 50% 50% 0;
+}
+
+.transition {
+  transition-property: none;
+  transition-duration: 0s;
+  transition-delay: 0s;
+  transition-timing-function: ease;
+}
+
+.animation {
+  animation-name: none; /* Sinnvoll für @keyframe Rules */
+  animation-duration: 0;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+/* interessante, aber nicht voll unterstützte Eigenschaften */
+
+.sonstiges {
+  scroll-behavior: auto; /* nicht unterstützt von Safari */
+}

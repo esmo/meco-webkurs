@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML und CSS</title>
+    <link href="../css/prism.css" rel="stylesheet" />
+    <link href="../css/anleitung.css" rel="stylesheet" />
+    <script src="../js/he.js"></script>
+    <script src="../js/anleitung.js"></script>
+    <script src="../js/prism.js"></script>
+    <style media="screen">
+      .beispiel-ausgabe.beispiel1 h1 {
+        color: blue;
+      }
+
+      .beispiel-ausgabe.beispiel1 p {
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>HTML und CSS</h1>
+      <h2>Eine Einführung</h2>
+    </header>
+    <main>
+      <p>
+        HTML und CSS sind zwei verschiedene Programmiersprachen, die aber
+        zusammenarbeiten.
+      </p>
+      <h3>HTML</h3>
+      <p>
+        <mark
+          >Mit <strong>HTML</strong> werden Inhalte in einem Dokument
+          strukturiert</mark
+        >. Beispielsweise wird festgelegt, welcher Text die Überschrift sein
+        soll und was zu einem Text-Absatz gehören soll. Ausserdem werden Medien
+        - wie Bilder und Videos - in das Dokument eingebunden.
+      </p>
+      <p>
+        HTML-Elemente werden mithilfe von sogenannten <em>Tags</em> markiert.
+        Der Inhalt wird dafür zwischen
+        <mark>dem öffnenden und dem schließenden Teil</mark> des HTML-Tags
+        eingeklammert. HTML-Elemente können dabei verschachtelt werden, d.h. ein
+        HTML-Element kann weitere HTML-ELemente enthalten.
+      </p>
+
+      <pre>
+        <code class="language-html">
+          <!-- Dies ist ein Beispiel für einen Kommentar in HTML.
+          Kommentare sind Anmerkungen im Quelltext, die nicht sichtbar sind. -->
+          <h1>Das ist ein Beispiel für eine Überschrift erster Ordnung.</h1>
+          <p>Das ist ein Beispiel für einen <em>Textabsatz</em>.</p>
+        </code>
+      </pre>
+      <h3>CSS</h3>
+      <p>
+        <mark>Mit <strong>CSS</strong> werden die HTML-Elemente gestaltet</mark
+        >. Beispielsweise kann die Größe, Farbe und Schriftart der Überschrift
+        festgelegt werden, oder der Abstand des Text-Absatzes nach oben und
+        unten.
+      </p>
+      <p>
+        Dafür wird in der CSS-Anweisung das HTML-Element ausgewählt, das
+        gestaltet werden soll. Das geschieht mit dem sogenannten
+        <em>Selektor</em> (selektieren = auswählen). Dann werden ihm die
+        gewünschten Eigenschaften zugewiesen. Der Selektor wird an den Anfang
+        der CSS-Anweisung geschrieben. Die Eigenschaften werden dahinter in
+        geschweifte Klammern geschrieben.
+      </p>
+
+      <pre>
+        <code class="language-css">
+          /* Dies ist ein Beispiel für einen Kommentar in CSS.*/
+
+          /* Mit der folgenden CSS-Anweisung wird die Schriftfarbe für die Überschrift (h1) blau */
+          h1 {
+            color: blue;
+          }
+
+          /* Mit der folgenden CSS-Anweisung wird die Schriftfarbe für den Text-Absatz (p) rot */
+          p {
+            color: red;
+          }
+        </code>
+      </pre>
+      <h3>Ausgabe</h3>
+      <div class="beispiel-ausgabe beispiel1" style="height: 200px">
+        <!-- Dies ist ein Beispiel für einen Kommentar in HTML. Kommentare sind Anmerkungen im Quelltext, die nicht sichtbar sind. -->
+        <h1>Das ist ein Beispiel für eine Überschrift erster Ordnung.</h1>
+        <p>Das ist ein Beispiel für einen <em>Textabsatz</em>.</p>
+      </div>
+    </main>
+  </body>
+</html>

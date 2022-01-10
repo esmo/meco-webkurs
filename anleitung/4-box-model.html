@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS-Box-Model</title>
+    <link href="../css/prism.css" rel="stylesheet" />
+    <link href="../css/anleitung.css" rel="stylesheet" />
+    <script src="../js/he.js"></script>
+    <script src="../js/anleitung.js"></script>
+    <script src="../js/prism.js"></script>
+    <style media="screen">
+      .beispiel-ausgabe .box {
+        /* Der Aussenabstand wird auf 100 Pixel gesetzt */
+        margin: 100px;
+        /* Der Innenabstand wird auch auf 100 Pixel gesetzt */
+        padding: 100px;
+
+        /* Der Rahmen soll 50 Pixel breit sein */
+        border-width: 50px;
+        /* Der Rahmen soll eine einfache Fläche sein.
+        Es gibt auch andere Optionen, wie bspw. eine
+        gestrichelte Linie. */
+        border-style: solid;
+        /* Die Rahmenfarbe wird auf schwarz gesetzt */
+        border-color: black;
+        /*Die Hintergrundfarbe des Inhaltsbereichs wird auf grün gesetzt.*/
+        background-color: green;
+
+        /* Die Höhe des Inhaltsbereichs soll 100 Pixel betragen */
+        height: 100px;
+        /* Die Breite des Inhaltsbereichs soll auch 100 Pixel betragen */
+        width: 100px;
+      }
+      .beispiel-ausgabe .box img {
+        height: 450px;
+        width: auto;
+      }
+      .box-modell img {
+        height: 300px;
+        width: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Das CSS-Box-Model</h1>
+      <h2>Die Bestandteile eines HTML-Elements</h2>
+    </header>
+    <main>
+      <p>
+        Jedes HTML-Element besteht im Wesentlichen aus einer Box, die einen
+        <mark
+          >Aussenabstand (margin), einen Rand (border), einen Innenabstand
+          (padding) und einen Inhaltsbereich (content)</mark
+        >
+        hat. Das folgende Bild veranschaulicht diese Bereiche:
+      </p>
+      <div class="box-modell">
+        <img src="../img/css-box-model.png" />
+      </div>
+      <p>
+        Zusammengenommen wird dies als "Box-Model" bezeichnet. Mit den folgenden
+        CSS-Anweisungen können die einzelnen Elemente des Box-Models gestaltet
+        werden:
+      </p>
+      <pre>
+        <code class="language-css">
+          .box {
+            /* Der Aussenabstand wird auf 100 Pixel gesetzt */
+            margin: 100px;
+            /* Der Innenabstand wird auch auf 100 Pixel gesetzt */
+            padding: 100px;
+
+            /* Der Rahmen soll 50 Pixel breit sein */
+            border-width: 50px;
+            /* Der Rahmen soll eine einfache Fläche sein.
+            Es gibt auch andere Optionen, wie bspw. eine
+            gestrichelte Linie. */
+            border-style: solid;
+            /* Die Rahmenfarbe wird auf schwarz gesetzt */
+            border-color: black;
+            /*Die Hintergrundfarbe des Inhaltsbereichs wird auf grün gesetzt.*/
+            background-color: green;
+
+            /* Die Höhe des Inhaltsbereichs soll 100 Pixel betragen */
+            height: 100px;
+            /* Die Breite des Inhaltsbereichs soll auch 100 Pixel betragen */
+            width: 100px;
+
+          }
+        </code>
+      </pre>
+      <div class="beispiel-ausgabe beispiel1">
+        <div class="box"></div>
+      </div>
+      <p>
+        <mark>Wichtig</mark>: Die Eigenschaften width und height eines
+        HTML-Elements legen nur die Breite und Höhe des Inhaltsbereichs fest. Um
+        die volle Größe eines Elements zu berechnen, müssen auch Aussenabstand
+        (margin), Rand (border) und Innenabstand (padding) berücksichtigt
+        werden. <br />
+        Mit der CSS-Eigenschaft
+        <code class="language-css">box-sizing: border-box;</code> kann das
+        Verhalten aber so verändert werden, dass die Werte für Höhe und Breite
+        Innenabstand und Rand mit einschließen.
+      </p>
+    </main>
+  </body>
+</html>

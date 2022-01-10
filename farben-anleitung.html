@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Farben - Anleitung</title>
+    <link href="css/prism.css" rel="stylesheet" />
+    <link href="css/anleitung.css" rel="stylesheet" />
+    <script src="js/he.js"></script>
+    <script src="js/anleitung.js"></script>
+    <script src="js/prism.js"></script>
+
+    <style>
+      [contenteditable],
+      [contenteditable] * {
+        outline: none !important;
+      }
+
+      .beispiel-ausgabe.beispiel1 div {
+        background-color: indigo;
+        /* Hintergrundfarbe */
+        border-color: blue;
+        /* Rahmenfarbe */
+        color: red;
+        /* Die Anweisung für Textfarbe heisst schlicht "color" */
+
+        /* Um den Rahmen sichtbar zu machen, geben wir ihm eine Dicke
+                  von 5 Pixeln und wählen einen Rahmenstil aus. */
+        border-width: 5px;
+        border-style: solid;
+      }
+
+      .beispiel-ausgabe.beispiel2 div.name {
+        /* Vorgegebener Farbwert "indigo" */
+        background-color: indigo;
+      }
+
+      .beispiel-ausgabe.beispiel2 div.rgb {
+        /* Farbwert Rot=75, Grün=0, Blau=130 */
+        background-color: rgb(75, 0, 130);
+      }
+
+      .beispiel-ausgabe.beispiel2 div.hex {
+        /* HEX-Farbwert Rot=4B, Grün=00, Blau=82 */
+        background-color: #4b0082;
+      }
+
+      .beispiel-ausgabe.beispiel2 div.hsl {
+        /* Farbwert Ton=275° (Grad Bogenmaß), Sättigung=100%, Helligkeit=25.5% */
+        background-color: hsl(275, 100%, 25.5%);
+      }
+
+      .beispiel-ausgabe.beispiel2 div {
+        /* Um die Kästen besser sichtbar zu machen, passen wir denn Innen- und Aussenabstand der div-Elemente an. */
+        padding: 10px;
+        margin: 10px;
+      }
+
+      .beispiel-ausgabe.beispiel3 div.rgb {
+        /* Farbwert Rot=75, Grün=0, Blau=130, Alpha=0.5 (halbtransparent) */
+        background-color: rgba(75, 0, 130, 0.5);
+      }
+
+      .beispiel-ausgabe.beispiel3 div.hex {
+        /* Hexadezimal-Farbwert Rot=4B, Grün=00, Blau=82, Alpha=80 (halbtransparent) */
+        background-color: #4b008280;
+      }
+
+      .beispiel-ausgabe.beispiel3 div.hsl {
+        /* Farbwert Ton=275° (Grad Bogenmaß), Sättigung=100%, Helligkeit=25.5%, Alpha=0.5 (halbtransparent) */
+        background-color: hsla(275, 100%, 25.5%, 0.5);
+      }
+
+      .beispiel-ausgabe.beispiel3 div {
+        /* Um die Kästen besser sichtbar zu machen, passen wir den
+      Innen- und Aussenabstand der div-Elemente an. */
+        padding: 10px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Farben definieren in CSS</h1>
+    </header>
+    <main>
+      <h2>HTML-Elemente einfärben</h2>
+      <p>
+        Für jedes HTML-Element kann per CSS festgelegt werden, welche
+        <mark>Hintergrund-, Rahmen- und Textfarbe</mark> es haben soll.<br />
+        Im folgenden Beispiel wird das <code class="language-html">div</code>-Element
+        mit einem grünen Hintergrund, einem blauen Rahmen und einer roten
+        Textfarbe versehen.
+      </p>
+      <h3>CSS</h3>
+      <pre>
+        <code class="language-css">
+          div {
+            background-color: green; /* Hintergrundfarbe */
+            border-color: blue; /* Rahmenfarbe */
+            color: red; /* Die Anweisung für Textfarbe heisst schlicht "color" */
+
+            /* Um den Rahmen sichtbar zu machen, geben wir ihm eine Dicke
+            von 5 Pixeln und wählen einen Rahmenstil aus. */
+            border-width: 5px;
+            border-style: solid;
+          }
+        </code>
+    </pre>
+      <h3>HTML</h3>
+      <pre>
+      <code class="language-html">
+        <div>Dies ist ein Beispiel-Text.</div>
+      </code>
+    </pre>
+      <h3>Ausgabe</h3>
+      <div class="beispiel-ausgabe beispiel1">
+        <div>Dies ist ein Beispiel-Text.</div>
+      </div>
+      <h2>Farbwerte festlegen</h2>
+      <p>Farben können in CSS auf 4 verschiedene Arten festgelegt werden:</p>
+      <ul>
+        <li><mark>vorgegebene Namen</mark> wie black, white, green etc.</li>
+        <li>
+          <mark>Die Funktion <code class="language-css">rgb()</code></mark
+          >, mit der die Intensität der Farben Rot, Grün, Blau jeweils als
+          Prozentwert oder mit einem Wert zwischen 0 und 255 angegeben wird.
+        </li>
+        <li>
+          <mark>RGB-Werte in Hexadezimal-Schreibweise</mark>, bei der die
+          Intensität der Farben Rot, Grün, Blau jeweils mit einem Wert zwischen
+          00 und FF angegeben wird. Der Hexadezimalwert FF entspricht dabei dem
+          Dezimalwert 255.
+        </li>
+        <li>
+          <mark>Die Funktion <code class="language-css">hsl()</code></mark
+          >, mit der der Farbton (hue), die Sättigung (saturation) und die
+          Helligkeit (lightness) festgelegt werden.
+        </li>
+      </ul>
+
+      <p>
+        Um die Hexadezimal-Schreibweise zu verwenden, müssen die Farbwerte von 0
+        bis 255 in Hexadezimalwerte umgerechnet werden. Hierfür finden sich
+        viele einfache Werkzeuge im Internet.
+      </p>
+
+      <p>
+        Bei der <code class="language-css">hsl()</code>-Funktion wird der Farbton als
+        Winkelangabe von 0 bis 360 aus einem Farbkreis bezeichnet, bei dem Rot
+        oben steht. Dementsprechend ist also die Angabe von 0 ebenso wie 360
+        Grad ein Rot.
+      </p>
+
+      <p>
+        Das hue-Farbrad mit Grad-Angaben (Quelle:
+        https://wisotop.de/hsv-und-hsl-farbmodell.php):
+        <img
+          src="img/hue-farbrad-mit-grad.png"
+          style="width: 150px; display: block"
+        />
+      </p>
+      <p>
+        Im folgenden Beispiel wird die Farbe Indigo auf diese vier verschiedene
+        Arten festgelegt.
+      </p>
+      <div class="example">
+        <h3>CSS</h3>
+
+        <pre>
+        <code class="language-css" contenteditable="true">
+          div.name {
+            /* Vorgegebener Farbwert "indigo" */
+            background-color: indigo;
+          }
+
+          div.rgb {
+            /* Farbwert Rot=75, Grün=0, Blau=130 */
+            background-color: rgb(75, 0, 130);
+          }
+
+          div.hex {
+            /* Hexadezimal-Farbwert Rot=4B, Grün=00, Blau=82 */
+            background-color: #4b0082;
+          }
+
+          div.hsl {
+            /* Farbwert Ton=275° (Grad Bogenmaß), Sättigung=100%, Helligkeit=25.5% */
+            background-color: hsl(275, 100%, 25.5%);
+          }
+
+          div {
+            /* Um die Kästen besser sichtbar zu machen, passen wir den
+            Innen- und Aussenabstand der div-Elemente an. */
+            padding: 10px;
+            margin: 10px;
+          }
+        </code>
+    </pre>
+        <h3>HTML</h3>
+        <pre>
+      <code class="language-html">
+        <div class="name"></div>
+        <div class="rgb"></div>
+        <div class="hex"></div>
+        <div class="hsl"></div>
+      </code>
+    </pre>
+        <h3>Ausgabe</h3>
+        <div class="beispiel-ausgabe beispiel2">
+          <div class="name"></div>
+          <div class="rgb"></div>
+          <div class="hex"></div>
+          <div class="hsl"></div>
+        </div>
+      </div>
+      <h3>Transparenz einstellen</h3>
+      <p>
+        Es ist möglich, die gewünschte Transparenz bei der Farbe anzugeben. Das
+        wird mit den Funktionen rgba() und hsla() erreicht, die die
+        entsprechenden Funktionen rgb() und hsl() um einen Wert für den
+        Alpha-Kanal erweitert. Der Wert muss zwischen 0 (vollkommen transparent)
+        und 1 (vollkommen opak) liegen. Auch für die Hexadezimal-Angabe ist das
+        möglich, hier wird der Wert für die Transparenz einfach als Hexadezimal-Zahl
+        zwischen 00 (transparent) und FF (opak) angefügt. Das folgende Beispiel
+        demonstriert das.
+      </p>
+      <h3>CSS</h3>
+      <pre>
+        <code class="language-css">
+          div.rgb {
+            /* Farbwert Rot=75, Grün=0, Blau=130, Alpha=0.5 (halbtransparent) */
+            background-color: rgba(75, 0, 130, 0.5);
+          }
+
+          div.hex {
+            /* Hexadezimal-Farbwert Rot=4B, Grün=00, Blau=82, Alpha=80 (halbtransparent) */
+            background-color: #4b008280;
+          }
+
+          div.hsl {
+            /* Farbwert Ton=275° (Grad Bogenmaß), Sättigung=100%,
+            Helligkeit=25.5%, Alpha=0.5 (halbtransparent) */
+            background-color: hsla(275, 100%, 25.5%, 0.5);
+          }
+
+          div {
+            /* Um die Kästen besser sichtbar zu machen, passen wir den
+            Innen- und Aussenabstand der div-Elemente an. */
+            padding: 10px;
+            margin: 10px;
+          }
+        </code>
+    </pre>
+      <h3>HTML</h3>
+      <pre>
+      <code class="language-html">
+        <div class="rgb">RGB</div>
+        <div class="hex">HEX</div>
+        <div class="hsl">HSL</div>
+      </code>
+    </pre>
+      <h3>Ausgabe</h3>
+      <div class="beispiel-ausgabe beispiel3">
+        <div class="rgb">RGB</div>
+        <div class="hex">HEX</div>
+        <div class="hsl">HSL</div>
+      </div>
+    </main>
+  </body>
+</html>

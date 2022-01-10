@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flexbox - Anleitung</title>
+    <link href="css/prism.css" rel="stylesheet" />
+    <link href="css/anleitung.css" rel="stylesheet" />
+    <script src="js/he.js"></script>
+    <script src="js/anleitung.js"></script>
+    <script src="js/prism.js"></script>
+    <style>
+      .flex-container {
+        display: flex;
+      }
+
+      .beispiel1.flex-container {
+        flex-direction: column;
+      }
+
+      .beispiel2.flex-container {
+        flex-direction: row;
+      }
+
+      .beispiel3.flex-container {
+        flex-direction: row;
+        justify-content: space-around;
+      }
+
+      .beispiel-ausgabe {
+        border: 5px solid grey;
+        border-radius: 5px;
+        padding: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Flexbox</h1>
+      <h2>Elemente positionieren</h2>
+    </header>
+    <main>
+      <p>
+        Mit Hilfe der Flexbox kann man HTML-Elemente horizontal und vertikal
+        positionieren. So können einzelne Elemente beispielsweise zentriert
+        werden, oder mehrere Elemente nebeneinander oder untereinander
+        dargestellt werden. Das ist eine einfache und flexible Möglichkeit,
+        Layouts zu erstellen.
+      </p>
+      <p>
+        Um Elemente zu positionieren, müssen sie in einem sogenannten
+        <q>Flex-Container</q> sein. Einen Flex-Container bekommt man, wenn man
+        einem HTML-Element die CSS-Anweisung
+        <code class="language-css">display:flex;</code> gibt. Damit werden automatisch
+        alle <em>direkten</em> Kindelemente dieses Elements zu sogenannten
+        <q>Flex-Items</q>, die über weitere CSS-Regeln positioniert werden
+        können.
+      </p>
+      <p>Das einfachste Flexbox-Beispiel sieht folgendermaßen aus:</p>
+      <pre>
+      <code class="language-css">
+      .flex-container {
+        display: flex;
+      }
+      </code>
+    </pre>
+      <p>
+        Gibt man einem HTML-Element die Klasse
+        <code class="language-css">flex-container</code>, dann werden also alle direkt
+        darunter liegenden Elemente als <q>Flex-Items</q> behandelt.
+      </p>
+      <pre>
+        <code class="language-html">
+          <div class="flex-container"> <!-- Dies ist der Flex-Container -->
+            <!-- Die Kind-Elemente sind die Flex-Items -->
+            <div>
+              1
+            </div>
+            <div>
+              2
+            </div>
+            <div>
+              3
+            </div>
+            <div>
+              4
+            </div>
+            <div>
+              5
+            </div>
+          </div>
+      </code>
+    </pre>
+      <p>
+        Aber alleine ist diese CSS-Anweisung wirkungslos, sie bekommt erst im
+        Zusammenspiel mit anderen Anweisungen einen Sinn. Mit der
+        CSS-Eigenschaft
+        <code class="language-css">flex-direction</code> lässt sich beispielsweise
+        bestimmen, dass die Flex-Items vertikal oder horizontal angeordnet
+        werden sollen. Im folgenden Beispiel wollen wir die Elemente
+        untereinander - in eine Spalte (column) - stellen.
+      </p>
+      <pre>
+    <code class="language-css">
+    .flex-container {
+      display: flex;
+      flex-direction: column; /* Die Elemente werden untereinander dargestellt */
+    }
+    </code>
+  </pre>
+      <h3>Beispiel 1</h3>
+      <div class="beispiel-ausgabe">
+        <div class="beispiel1 flex-container">
+          <div>
+            1
+          </div>
+          <div>
+            2
+          </div>
+          <div>
+            3
+          </div>
+          <div>
+            4
+          </div>
+          <div>
+            5
+          </div>
+        </div>
+      </div>
+      <p>
+        Wird der Wert für <code class="language-css">flex-direction</code> auf
+        <code class="language-css">row</code> geändert, dann werden die Flex-Items
+        nebeneinander - in einer Reihe (row) - dargestellt.
+      </p>
+      <pre>
+    <code class="language-css">
+      .flex-container {
+        display: flex;
+        flex-direction: row; /* Die Elemente werden nebeneinander dargestellt */
+      }
+    </code>
+  </pre>
+      <h3>Beispiel 2</h3>
+      <div class="beispiel-ausgabe">
+        <div class="beispiel2 flex-container">
+          <div class="first">
+            1
+          </div>
+          <div class="second">
+            2
+          </div>
+          <div class="third">
+            3
+          </div>
+          <div class="fourth">
+            4
+          </div>
+          <div class="fifth">
+            5
+          </div>
+        </div>
+      </div>
+      <p>
+        Über die Eigenschaft <code class="language-css">justify-content</code> kann
+        festgelegt werden, wie die Elemente zueinander angeordnet werden. Der
+        Wert <code class="language-css">center</code> beispielsweise zentriert alle
+        Elemente, und mit <code class="language-css">space-around</code> werden alle
+        Elemente mit dem gleichen Abstand zueinander (und zum Rand) dargestellt.
+        Ist nichts angegeben, werden die Elemente linksbündig angeordet, was dem
+        Wert <code class="language-css">flex-start</code> entspricht.
+      </p>
+      <pre>
+    <code class="language-css">
+      .flex-container {
+        display: flex;
+        flex-direction: row; /* Die Elemente werden nebeneinander dargestellt */
+        justify-content: space-around; /* Alle Elemente haben den gleichen Abstand zueinander und zum Rand. */
+      }
+    </code>
+  </pre>
+      <h3>Beispiel 3</h3>
+      <div class="beispiel-ausgabe">
+        <div class="beispiel3 flex-container">
+          <div class="first">
+            1
+          </div>
+          <div class="second">
+            2
+          </div>
+          <div class="third">
+            3
+          </div>
+          <div class="fourth">
+            4
+          </div>
+          <div class="fifth">
+            5
+          </div>
+        </div>
+      </div>
+      <p>
+        Es gibt noch eine Reihe weiterer CSS-Eigenschaften, mit denen man das
+        Verhalten der Flexbox beeinflussen kann. Ein kompletter und gut
+        aufbereiteter Überblick über alle Möglichkeiten, die Flexbox bietet
+        findet sich hier:
+        <a
+          href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+          target="_blank"
+          >https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a
+        >.
+      </p>
+    </main>
+  </body>
+</html>

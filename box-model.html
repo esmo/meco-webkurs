@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Das CSS-Box-Model</title>
+    <style>
+      main {
+        display: flex;
+        justify-content: center;
+      }
+      article:first-of-type {
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        display: inline-flex;
+      }
+      .box {
+        height: auto;
+        width: auto;
+        min-height: auto;
+        min-width: auto;
+        padding: 100px;
+        margin: 100px;
+
+        border-style: solid;
+        border-width: 50px;
+        border-radius: 30px;
+
+        border-color: black;
+        background-color: green;
+      }
+      .box img {
+        height: 500px;
+        width: auto;
+      }
+      img[src="css-box-model.png"] {
+        height: 300px;
+        width: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>
+        Das CSS-Box-Model
+      </h1>
+      <h2>
+        Eine Einführung
+      </h2>
+      <!-- <nav>
+        <a href="seite1.html">Hier steht ein Link zu einer anderen Seite</a>
+      </nav> -->
+    </header>
+    <main>
+      <article>
+        <div class="box"><img src="bild.jpg" /></div>
+      </article>
+      <article>
+        <img src="css-box-model.png" />
+      </article>
+      <!-- <aside>
+        Dies ist eine Sidebar, in der zusätzlicher Inhalt stehen kann.
+      </aside> -->
+    </main>
+    <!-- <footer>
+      Footer
+    </footer> -->
+  </body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CSS-Animationen - Anleitung</title>
+    <link href="css/prism.css" rel="stylesheet" />
+    <link href="css/anleitung.css" rel="stylesheet" />
+    <script src="js/htmlEntities.js"></script>
+    <script src="js/prism.js"></script>
+
+    <style>
+      @keyframes beispiel1 {
+        from {
+          background-color: blue;
+        }
+        to {
+          background-color: green;
+        }
+      }
+
+      @keyframes beispiel2 {
+        0% {
+          background-color: blue;
+        }
+        33% {
+          width: 30px;
+          height: 30px;
+        }
+        66% {
+          width: 120px;
+          height: 60px;
+        }
+        100% {
+          background-color: green;
+        }
+      }
+
+      .beispiel-ausgabe div.animiert {
+        width: 100px;
+        height: 100px;
+        animation-name: beispiel1;
+        animation-duration: 1.5s;
+        animation-timing-function: ease-out;
+        animation-delay: 0s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+        animation-fill-mode: none;
+      }
+      .beispiel-ausgabe.beispiel2 div.animiert {
+        animation-name: beispiel2;
+      }
+      div.animiert:hover {
+        animation-play-state: paused;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>CSS-Animationen</h1>
+    </header>
+    <main>
+      <article>
+        <h2>Eine Animation erstellen</h2>
+        <p>
+          Mit einer <code>@keyframes</code>-Anweisung kannst Du Schritte definieren, in denen
+          sich bestimmte CSS-Eigenschaften der Elemente verändern sollen. Im
+          folgenden Beispiel ist eine Animation mit dem Namen "beispiel1"
+          definiert, welche die Hintergrundfarbe von blau nach gelb verändert.
+          Der Name kann frei gewählt werden.
+        </p>
+        <h3>CSS</h3>
+        <pre>
+          <code class="language-css">
+            @keyframes beispiel1 {
+              from {
+                background-color: blue;
+              }
+              to {
+                background-color: green;
+              }
+            }
+        </code>
+      </pre>
+        <p>
+          Die <code>@keyframes</code>-Anweisung legt also fest, welche Eigenschaften wie
+          verändert werden sollen. Um diese Animation dann zu verwenden, muss
+          festgelegt werden, auf welche HTML-Elemente sie angewendet werden
+          soll, wie schnell sie ablaufen soll, und wie oft sie wiederholt werden
+          soll. Das folgenden Beispiel zeigt, wie die gerade definierte
+          Animation "beispiel1" auf ein HTML-Element angewendet werden kann.
+        </p>
+        <h3>CSS</h3>
+        <pre>
+          <code class="language-css">
+            div.animiert {
+              width:400px;
+              height: 400px;
+              /* Die Animation wird anhand ihres Namens ausgewählt */
+              animation-name: beispiel1;
+              /* Die Dauer der Animation wird festgelegt */
+              animation-duration: 1.5s;
+              /* Es kann eine Verzögerung für den Beginn festgelegt werden */
+              animation-delay: 0s;
+              /* Wie oft soll die Animation wiederholt werden?
+                Es kann eine Zahl angegeben werden oder "infinite", dann läuft sie dauerhaft.
+              */
+              animation-iteration-count: infinite;
+              /* Soll die Animation von Anfang bis Ende laufen (normal),
+              oder rückwärts (reverse), oder immer vor und zurück (alternate),
+              oder zurück und vor (alternate-reverse?)? */
+              animation-direction: alternate;
+
+            }
+
+            /* Wenn die Maus über dem div ist, soll die Animation pausieren. */
+            div.animiert:hover {
+              animation-play-state: paused;
+            }
+          </code>
+        </pre>
+        <h3>HTML</h3>
+        <pre>
+          <code class="language-html">
+            <div class="animiert"></div>
+          </code>
+        </pre>
+        <h3>Ausgabe</h3>
+        <div class="beispiel-ausgabe">
+          <div class="animiert"></div>
+        </div>
+        <h2>Schritte zu einer Animation hinzufügen</h2>
+        <p>
+          In der oben definierten @keyframe-Anweisung sind zwei Schritte
+          festgelegt: <code class="language-css">from</code> und
+          <code class="language-css">to</code>. Es gibt aber auch die
+          Möglichkeit, mehrere Schritte anzugeben. Anstatt
+          <code class="language-css">from</code> und
+          <code class="language-css">to</code> verwendet man dann einfach
+          Prozentwerte um zu definieren, wann die Veränderung passieren soll.
+          Soll etwas beispielsweise genau nach der Hälfte der Animation
+          passieren, dann nimmt man 50% als Wert. Im folgenden Beispiel findet
+          jeweils nach 20% die nächste Veränderung statt.
+        </p>
+        <h3>CSS</h3>
+        <pre>
+          <code class="language-css">
+            @keyframes beispiel2 {
+              0% {
+                background-color: blue;
+              }
+              33% {
+                width: 30px;
+                height: 30px;
+              }
+              66% {
+                width: 120px;
+                height: 60px;
+              }
+              100% {
+                background-color: green;
+              }
+            }
+        </code>
+      </pre>
+        <h3>Ausgabe</h3>
+        <div class="beispiel-ausgabe beispiel2" style="height: 200px;">
+          <div class="animiert"></div>
+        </div>
+      </article>
+    </main>
+    <footer>
+      &copy; 2020 Edouard Simon | Mediencollege Berlin
+    </footer>
+  </body>
+</html>
