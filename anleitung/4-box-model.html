@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>CSS-Box-Model</title>
     <link href="../css/prism.css" rel="stylesheet" />
     <link href="../css/anleitung.css" rel="stylesheet" />
@@ -94,6 +94,79 @@
       <div class="beispiel-ausgabe beispiel1">
         <div class="box"></div>
       </div>
+      <h2>Angaben für oben, unten, links und rechts</h2>
+      <p>
+        Es ist möglich, für den Innenabstand, den Rahmen und den Aussenabstand
+        unterschiedliche Angaben für die einzelnen Seiten zu machen. Dann werden
+        die gewünschten Werte einfach hintereinander angegeben, wie in den
+        folgenden Beispielen.
+      </p>
+      <pre>
+        <code class="language-css">
+          /* Bei vier Werten sind diese für oben, rechts, unten und links */
+          margin: 10px 2px 2px 5px;
+          padding: 10px 2px 2px 5px;
+          border-width: 10px 2px 2px 5px;
+          /* Bei drei Werten ist der erste für oben, der zweite für
+          rechts und links, und der dritte für unten */
+          margin: 10px 2px 5px;
+          padding: 10px 2px 5px;
+          border-width: 10px 2px 5px;
+          /* Bei zwei Werten ist der erste für oben und unten, und der zweite für
+          rechts und links  */
+          margin: 10px 2px;
+          padding: 10px 2px;
+          border-width: 10px 2px;
+          /* Bei einem Wert gilt dieser für alle Seiten, wie schon oben beschrieben. */
+          margin: 10px;
+          padding: 10px;
+          border-width: 10px;
+        </code>
+      </pre>
+      <h2>Angaben nur für bestimmte Seiten</h2>
+      <p>
+        Es ist auch möglich, die Angaben nur für bestimmte Seiten zu machen.
+        Will man beispielsweise nur den linken Aussenabstand auf 10 Pixel
+        setzen, so kann man dies mit der Angabe
+        <code class="language-css">margin-left: 10px</code>erreichen. Die
+        Angaben für die einzelnen Seiten sind wie folgt.
+      </p>
+      <pre>
+        <code class="language-css">
+          .box {
+            /* Der Aussenabstand wird auf 100 Pixel gesetzt */
+            /* links */
+            margin-left: 100px;
+            /* oben */
+            margin-top: 100px;
+            /* rechts */
+            margin-right: 100px;
+            /* unten */
+            margin-bottom: 100px;
+
+            /* Der Innenabstand wird auch auf 100 Pixel gesetzt */
+            /* links */
+            padding-left: 100px;
+            /* oben */
+            padding-top: 100px;
+            /* rechts */
+            padding-right: 100px;
+            /* unten */
+            padding-bottom: 100px;
+
+            /* Der Rahmen soll 50 Pixel breit sein */
+            /* links */
+            border-left-width: 50px;
+            /* oben */
+            border-top-width: 50px;
+            /* rechts */
+            border-right-width: 50px;
+            /* unten */
+            border-bottom-width: 50px;
+          }
+        </code>
+      </pre>
+      <h2>Zusammenfassende Angaben</h2>
       <p>
         <mark>Wichtig</mark>: Die Eigenschaften width und height eines
         HTML-Elements legen nur die Breite und Höhe des Inhaltsbereichs fest. Um
