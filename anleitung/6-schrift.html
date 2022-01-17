@@ -3,152 +3,111 @@
   <head>
     <meta charset="utf-8" />
     <title>Textgestaltung mit CSS</title>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Piazzolla:wght@100&display=swap');
-      .newspaper {
-        font-family: 'Piazzolla', sans-serif;
-        column-count: 3;
-        column-fill: balance;
-        column-gap: 20px;
-        column-rule-color: black;
-        column-rule-style: solid;
-        column-rule-width: 1px;
-        quotes: "«" "»" "‹" "›";
-      }
-      .rtl {
-        direction: rtl;
-        unicode-bidi: bidi-override;
-      }
-      .small-caps {
-        font-variant: small-caps;
-      }
-      .green {
-        color: green;
-      }
-      .letter-space {
-        letter-spacing: 5px;
-      }
-      .bold {
-        font-weight: bold;
-      }
-      .italic {
-        font-style: italic;
-      }
-      .shadow {
-        text-shadow:3px 3px #aaa;
-      }
-      .line-through {
-        text-decoration: line-through;
-      }
-      .line-under {
-        text-decoration: underline;
-      }
-      .line-over {
-        text-decoration: overline;
-      }
-      .align-super {
-        vertical-align: super;
-      }
-      .align-sub {
-        vertical-align: sub;
-      }
-      article {
-        padding:10px;
-        font-family: initial;
-        font-size: 22px;
-        line-height: normal;
-        font-weight: normal;
+    <link href="../css/prism.css" rel="stylesheet" />
+    <link href="../css/anleitung.css" rel="stylesheet" />
+    <script src="../js/he.js"></script>
+    <script src="../js/anleitung.js"></script>
+    <script src="../js/prism.js"></script>
 
-        text-indent: 0;
-        text-decoration:
-
-
-        text-transform:uppercase;
-        text-align: left;
-
-        vertical-align: baseline;
-
-        user-select: auto;
-        writing-mode: horizontal-tb;
-        /* Textrichtung (links nach rechts, rechts nach links) */
-        direction: ltr;
-        unicode-bidi: normal;
-
-
-      }
-    </style>
+    <style></style>
   </head>
   <body>
     <header>
-      <h1 class="shadow bold italic green line-under letter-space small-caps">
-        Textgestaltung mit CSS
-      </h1>
-      <h2>Eine Einführung</h2>
+      <h1>Textgestaltung mit CSS</h1>
     </header>
     <main>
-      <hr />
-      <h3>Text ohne Gestaltung</h3>
-      <article>
-        <q
-          >Hallo. Ich bin ein kleiner Blindtext. Und zwar schon so lange ich
-          denken kann. Es war nicht leicht zu verstehen, was es bedeutet, ein
-          blinder Text zu sein: Man ergibt keinen Sinn. Wirklich keinen Sinn.
-          Man wird zusammenhangslos eingeschoben und rumgedreht – und oftmals
-          gar nicht erst gelesen. Aber bin ich allein deshalb ein schlechterer
-          Text als andere?
-          <q>Na gut, ich werde nie in den Bestsellerlisten stehen.</q>
-          Aber andere Texte schaffen das auch nicht. Und darum stört es mich
-          nicht besonders, blind zu sein. Und sollten Sie diese Zeilen noch
-          immer lesen, so habe ich als kleiner Blindtext etwas geschafft, wovon
-          all die richtigen und wichtigen Texte meist nur träumen.</q
-        >
-      </article>
-      <hr />
-      <article class="newspaper">
-        <h3>Text mit CSS-Gestaltungsoptionen</h3>
-        <q
-          ><span class="bold" title="fett"
-            >Hallo. Ich bin ein kleiner Blindtext.</span
-          >
-          <span class="italic" title="kursiv"
-            >Und zwar schon so lange ich denken kann.</span
-          >
-          <span class="align-super" title="hochgestellt"
-            >Es war nicht leicht zu verstehen, was es bedeutet, ein blinder Text
-            zu sein:</span
-          >
-          <span class="align-sub" title="tiefgestellt"
-            >Man ergibt keinen Sinn.</span
-          >
-          <span class="small-caps" title="Kapitälchen">
-            Wirklich keinen Sinn.
-          </span>
-          <span class="rtl" title="rechts nach links">
-            Man wird zusammenhangslos eingeschoben und rumgedreht – und oftmals
-            gar nicht erst gelesen.
-          </span>
-          <span class="green" title="farbig">
-            Aber bin ich allein deshalb ein schlechterer Text als andere?
-          </span>
+      <p>
+        Für die Textgestaltung stehen in CSS eine Reihe von Möglichkeiten zur
+        Verfügung. Im folgenden sind die wichtigsten aufgeführt. Ein
+        Beispieldokument mit allen möglichen CSS-Eigenschaften zur
+        Schriftgestaltung findet sich hier:
+        <a href="6-schrift-beispiel.html">Textgestaltung mit CSS</a>
+      </p>
+      <h2>Schriften einbinden</h2>
+      <pre>
+        <code class="language-css">
 
-          <q title="einfache Anführungszeichen"
-            >Na gut, ich werde nie in den Bestsellerlisten stehen.</q
-          >
+          /* Import einer Schriftart, bspw. von Google Fonts */
+          @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+          /* Verwenden einer bestimmten Schriftart und einer Ersatzschriftart,
+          falls die Schrift nicht geladen werden kann. */
+          font-family: Roboto, sans-serif;
 
-          <span class="letter-space" title="Buchstabe-Abstand"
-            >Aber andere Texte schaffen das auch nicht.</span
-          >
-          <span class="shadow" title="Schatten">
-            Und darum stört es mich nicht besonders, blind zu sein.
-          </span>
-          <span class="line-under" title="Unterstrich">Und</span> sollten Sie
-          diese Zeilen noch
-          <span class="line-through" title="durchgestrichen">immer</span> lesen,
-          so habe ich als kleiner Blindtext etwas
-          <span class="line-over" title="Überstrich">geschafft</span>, wovon all
-          die richtigen und wichtigen Texte meist nur träumen.</q
+        </code>
+      </pre>
+      <h2>Schriftgröße und Zeilenabstand</h2>
+      <p>
+        Die Schriftgröße kann über die Eigenschaft font-size festgelegt werden.
+      </p>
+      <p>
+        Die Festlegung der Zeilenhöhe hat eine Besonderheit: Es ist möglich, sie
+        in Abhängigkeit von der Schriftgröße zu definieren. Dafür gibt man
+        einfach einen Wert ohne Einheit an, also bspw. 1. Der Wert dient als
+        Multiplikator, d.h. die
+        <mark
+          >Zeilenhöhe entspricht der Schriftgröße multipliziert mit diesem
+          Wert</mark
         >
-      </article>
+        .
+      </p>
+      <ul>
+        <li>
+          Ist der Wert <strong>1</strong>, dann entspricht die Zeilenhöhe der
+          Schriftgröße.
+        </li>
+        <li>
+          Ist der Wert <strong>zwischen 0 und 1</strong>, dann ist die
+          Zeilenhöhe kleiner als die Schriftgröße.
+        </li>
+        <li>
+          Ist der Wert <strong>größer als 1</strong> , dann ist die Zeilenhöhe
+          um diesen Faktor größer als die Schriftgrößer
+        </li>
+      </ul>
+      <pre>
+        <code class="language-css">
+
+          /* Schriftgröße festlegen */
+          font-size: 12px;
+
+          /* Zeilenhöhe festlegen. In diesem Fall ist die Zeilenhöhe das
+          1,5-fache der Schriftgröße, also 18 Pixel. */
+          line-height: 1.5;
+
+        </code>
+      </pre>
+      <h2>Das Schriftbild verändern</h2>
+      <pre>
+        <code class="language-css">
+
+          /* fett */
+          font-weight: bold;
+
+          /* kursiv */
+          font-style: italic;
+
+          /* Schriftfarbe */
+          color: blue;
+
+          /* Unter-, Über-, und Durchstreichungen */
+          text-decoration: underline;
+          text-decoration: overline;
+          text-decoration: line-through;
+          /* Verhindert bspw. die automatische Unterstreichung von
+          Links (a-Tags). */
+          text-decoration: none;
+
+
+          /* Klein- bzw. Großbuchstaben erzwingen */
+          text-transform: lowercase;
+          text-transform: uppercase;
+          /* Kapitälchen */
+          text-transform: capitalize;
+
+          /* selbstdefinierte Anführungszeichen verwenden */
+          quotes: '„' '”';
+      </code>
+    </pre>
     </main>
   </body>
 </html>
