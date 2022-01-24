@@ -43,12 +43,12 @@
         right: 10px;
       }
 
-      .fourth {
+      .beispiel1 .fourth {
         position: sticky;
         top: 0;
       }
 
-      .fifth {
+      .beispiel1 .fifth {
         position: fixed;
         top: 0;
         left: 50px;
@@ -93,7 +93,8 @@
         <li>
           <strong>relative</strong>: Das Element wird relativ zu seiner eigenen
           Position verschoben. Die Verschiebung wird über die Eigenschaften
-          <code class="language-css">top</code>, <code class="language-css">left</code>,
+          <code class="language-css">top</code>,
+          <code class="language-css">left</code>,
           <code class="language-css">bottom</code> und
           <code class="language-css">right</code> angegeben.
         </li>
@@ -102,14 +103,16 @@
           genommen und mit <code class="language-css">top</code>,
           <code class="language-css">left</code>,
           <code class="language-css">bottom</code> und
-          <code class="language-css">right</code> frei auf der Seite positioniert.
-          Wenn ein Elternelement relativ positioniert ist, dann wird dieses
-          Elternelement als Bezugsrahmen für die Verschiebung genommen.
+          <code class="language-css">right</code> frei auf der Seite
+          positioniert. Wenn ein Elternelement relativ positioniert ist, dann
+          wird dieses Elternelement als Bezugsrahmen für die Verschiebung
+          genommen.
         </li>
         <li>
           <strong>fixed</strong>: Das Element wird wie bei
-          <code class="language-css">position: absolute</code> aus dem Seitenfluss genommen,
-          bleibt aber auf der Seite liegen und scrollt nicht mit.
+          <code class="language-css">position: absolute</code> aus dem
+          Seitenfluss genommen, bleibt aber auf der Seite liegen und scrollt
+          nicht mit.
         </li>
         <li>
           <strong>sticky</strong>: Das Element scrollt solange mit, bis es die
@@ -154,14 +157,25 @@
           }
 
 
-          /* "sticky": Das Element bleibt am Seitenanfang "kleben",
-          wenn weiter nach unten gescrollt wird. */
+          /* "sticky": Das Element bleibt an einer Stelle des
+          Elternelements "kleben", wenn weiter nach unten gescrollt wird. */
 
           .fourth {
             position: sticky;
             bottom: 10px;
             right: 10px;
           }
+
+          /* "fixed": Das Element bleibt an einer Stelle, selbst wenn die
+          Seite gescrollt wird. */
+
+          .beispiel1 .fifth {
+            position: fixed;
+            top: 0;
+            left: 50px;
+          }
+
+
 
           /*Ist das Eltern-Element nicht statisch positioniert
           (also z.B. relativ), dann... */
@@ -174,7 +188,7 @@
           }
 
           /*... orientiert sich das absolut positionierte Kind-Element
-          am Eltern-Element, und nicht mehr an der gesamten Seite.*/
+          am Eltern-Element, und nicht mehr an der gesamten Seite. */
 
           .inner {
             position: absolute;

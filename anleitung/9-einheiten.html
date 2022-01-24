@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Textgestaltung mit CSS</title>
+    <link href="../css/prism.css" rel="stylesheet" />
+    <link href="../css/anleitung.css" rel="stylesheet" />
+    <script src="../js/he.js"></script>
+    <script src="../js/anleitung.js"></script>
+    <script src="../js/prism.js"></script>
+
+    <style>
+      .beispiel-ausgabe.beispiel1 div {
+        /* Der Rand wird 1 Pixel breit gesetzt. */
+        border: 1px solid black;
+
+        /* Der Innenabstand wird auf die
+        doppelte Größe der Schrift gesetzt, also 40 Pixel. */
+        padding: 2em;
+
+        /* Die Schriftgröße wird auf 80% der Schriftgröße
+        des Elternelements gesetzt. */
+        font-size: 80%;
+
+        /*Die Breite wird auf die Hälfte (50%)
+        der Breite des Anzeigefensters gesetzt. */
+        width: 1vw;
+
+        /*Die Höhe wird auf ein Viertel (25%)
+        der Höhe des Anzeigefensters gesetzt */
+        height: 25vh;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Maßeinheiten in CSS</h1>
+    </header>
+    <main>
+      <p>
+        Es gibt verschiedene Maßeinheiten, die in CSS verwendet werden können,
+        um die Größe von Elementen festzulegen. Dabei wird unterschieden
+        zwischen <mark>absoluten</mark> und
+        <mark>relativen Maßeinheiten.</mark>.
+      </p>
+      <ul>
+        <li>
+          <em>absolute</em> Maßeinheiten legen die Größe eindeutig fest,
+          unabhängig davon, wie groß andere Elemente sind.
+        </li>
+        <li>
+          <em>relative</em> Maßeinheiten legen die Größe in Abhängigkeit vom
+          jeweiligen <em>Elternelement</em> fest.
+        </li>
+      </ul>
+      <p>
+        <strong>Pixel</strong> (Einheit <code class="language-css">px</code>)
+        sind die wichtigste <strong>absolute Maßeinheit</strong> . Ein Pixel ist
+        ein Punkt auf dem Bildschirm. Je nachdem, wie hoch die Auflösung des
+        Bildschirms ist, kann ein Pixel jedoch unterschiedlich groß sein. Je
+        höher die Auflösung ist, desto kleiner sind die Pixel.
+      </p>
+      <p>
+        Die einfachste und bekannteste <strong>relative Maßeinheit</strong> sind
+        <strong>Prozentangaben</strong>. Diese Angabe bezieht sich immer auf den
+        Wert des Elternelement. (Mit einer seltsamen Ausnahme: Die Prozentangabe
+        beim Aussenabstand <code class="language-css">margin</code> bezieht sich
+        immer auf die Breite des Elternelements.)
+      </p>
+      <p>
+        Die Einheit <code class="language-css">em</code> ist auch eine relative
+        Angabe, sie entspricht aber der an dieser Stelle verwendeten Schrift.
+        Das ist überall da sinnvoll, wo Abstände in Abhängigkeit von der
+        Schriftgröße festgelegt werden sollen.
+      </p>
+      <p>
+        Die Einheiten <code class="language-css">vw</code> und
+        <code class="language-css">vh</code> beziehen sich auf das
+        Anzeigefenster (engl. "viewport") des Browsers. 100vh sind 100% der Höhe
+        (vh = viewport height) und 100vw 100% der Breite (vw = viewport width)
+        des Anzeigefensters.
+      </p>
+      <p>Im folgenden Beispiel kommen alle angesprochenen Maßangaben vor.</p>
+      <pre>
+        <code class="language-css">
+
+          div {
+            /* Der Rand wird 1 Pixel breit gesetzt. */
+            border: 1px solid black;
+
+            /* Der Innenabstand wird auf die
+              doppelte Größe der Schrift gesetzt, also 40 Pixel. */
+            padding: 2em;
+
+            /* Die Schriftgröße wird auf 80% der Schriftgröße
+              des Elternelements gesetzt. */
+            font-size: 80%;
+
+            /*Die Breite wird auf die Hälfte (50%)
+              der Breite des Anzeigefensters gesetzt. */
+            width: 1vw;
+
+            /*Die Höhe wird auf ein Viertel (25%)
+              der Höhe des Anzeigefensters gesetzt */
+            height: 25vh;
+          }
+      </code>
+    </pre>
+      <div class="beispiel-ausgabe beispiel1" style="height: 300px">
+        <div></div>
+      </div>
+    </main>
+  </body>
+</html>
