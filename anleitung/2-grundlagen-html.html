@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>HTML Grundlagen</title>
     <link href="../css/prism.css" rel="stylesheet" />
     <link href="../css/anleitung.css" rel="stylesheet" />
@@ -13,6 +13,7 @@
 
   <body>
     <header>
+      <a href="index.html">zurück</a>
       <h1>HTML</h1>
       <h2>Grundlagen</h2>
     </header>
@@ -21,55 +22,60 @@
         Es gibt eine Vielzahl verschiedener HTML-Tags. Hier sind die ersten für
         den Einstieg:
       </p>
-      <h3>Überschriften</h3>
+      <h3>Überschrift und Textabsatz</h3>
       <p>
-        Für Überschriften gibt es insgesamt 6 Tags: h1 ist die Hauptüberschrift,
-        h6 die am wenigsten wichtige.
+        Mit den Tags <em>h1</em> bis <em>h6</em> (Heading 1 bis Heading 6) werden Überschriften
+        markiert, wobei h1 für die Hauptüberschrift steht, und h2 bis h6 für
+        Zwischenüberschriften 2. bis 6. Ordnung. Ein <em>p</em>-Tag (Paragraph) markiert
+        einen Textabsatz.
       </p>
       <pre>
         <code class="language-html">
-          <h1>Das ist ein Beispiel für eine Überschrift erster Ordnung,
-            bspw. der Titel eines HTML-Dokuments.</h1>
-          <h2>Das ist ein Beispiel für eine Überschrift zweiter Ordnung.
-            Sie kann bspw. als Untertitel verwendet werden.</h2>
-          <h3>Das ist ein Beispiel für eine Überschrift dritter Ordnung.
-            Sie eignet sich bspw. für Zwischenüberschriften.</h3>
-          <h4>Das ist ein Beispiel für eine Überschrift vierter Ordnung.
-            Sie wird nur selten verwendet, ebenso wie die folgenden.</h4>
-          <h5>Das ist ein Beispiel für eine Überschrift fünfter Ordnung.</h5>
-          <h6>Das ist ein Beispiel für eine Überschrift sechster Ordnung.</h6>
+          <h1>
+            Das ist ein Beispiel für eine Überschrift erster Ordnung, bspw. der
+            Titel eines HTML-Dokuments.
+          </h1>
+          <p>Dies ist ein Textabsatz. Er wird verwendet, um Abschnitte
+            eines Textes besser voneinander abzugrenzen und den Text besser
+            lesbar zu machen.</p>
+          <h2>
+            Das ist ein Beispiel für eine Zwischenüberschrift 2. Ordnung.
+          </h2>
+          <p>
+            Die Zwischenüberschrift wird bspw. in Abschnitten eines Textes
+            verwendet. Insgesamt gibt es Überschriften von Ebene 1 - 6
+            (also h1-h6). Dies ist übrigens wieder ein Textabsatz.
+          </p>
         </code>
       </pre>
-      <p>So sehen die Überschriften aus:</p>
+      <p>So sehen die Überschriften und Absätze aus:</p>
       <div class="beispiel-ausgabe beispiel1">
-        <!-- Für Überschriften gibt es insgesamt 6 Tags: h1 bis h6.
-        h1 ist die wichtigste Überschrift, h6 die am wenigsten wichtige. -->
         <h1>
           Das ist ein Beispiel für eine Überschrift erster Ordnung, bspw. der
           Titel eines HTML-Dokuments.
         </h1>
+        <p>Dies ist ein Textabsatz. Er wird verwendet, um Abschnitte
+          eines Textes besser voneinander abzugrenzen und den Text besser
+          lesbar zu machen.</p>
         <h2>
-          Das ist ein Beispiel für eine Überschrift zweiter Ordnung. Sie kann
-          bspw. als Untertitel verwendet werden.
+          Das ist ein Beispiel für eine Zwischenüberschrift 2. Ordnung.
         </h2>
-        <h3>
-          Das ist ein Beispiel für eine Überschrift dritter Ordnung. Sie eignet
-          sich bspw. für Zwischenüberschriften.
-        </h3>
-        <h4>
-          Das ist ein Beispiel für eine Überschrift vierter Ordnung. Sie wird
-          nur selten verwendet, ebenso wie die folgenden.
-        </h4>
-        <h5>Das ist ein Beispiel für eine Überschrift fünfter Ordnung.</h5>
-        <h6>Das ist ein Beispiel für eine Überschrift sechster Ordnung.</h6>
+        <p>
+          Die Zwischenüberschrift wird bspw. in Abschnitten eines Textes
+          verwendet. Insgesamt gibt es Überschriften von Ebene 1 - 6
+          (also h1-h6). Dies ist übrigens wieder ein Textabsatz.
+        </p>
       </div>
+      <p>Übrigens: Zeilenumbrüche werden in HTML ebenso ignoriert wie mehr
+        als ein Leerzeichen hintereinander.</p>
       <h3>Bilder und Links</h3>
       <p>
-        Um Bilder und Links in eine Seite einzubinden, muss angegeben werden, wo
-        sich die Datei (also das Bild oder die verlinkte Datei) befindet, die
-        eingebunden werden soll. Das geschieht über <em>Attribute</em>, die im
-        öffnenden HTML-Tag notiert werden. Ein Attribut hat einen Namen und
-        einen Wert in der Form <code class="language-html">name="wert"</code>.
+        Um Bilder (<em>img</em>-Tag) und Links (<em>a</em>-Tag)in eine Seite
+        einzubinden, muss angegeben werden, wo sich die Datei (also das Bild
+        oder die verlinkte Datei) befindet, die eingebunden werden soll. Das
+        geschieht über <em>Attribute</em>, die im öffnenden HTML-Tag notiert
+        werden. Ein Attribut hat einen Namen und einen Wert in der Form
+        <code class="language-html">name="wert"</code>.
       </p>
       <pre>
         <code class="language-html">
