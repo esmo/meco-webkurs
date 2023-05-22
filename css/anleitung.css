@@ -60,6 +60,7 @@ code.inline {
   box-sizing: border-box;
   height: 1em;
 }
+
 .beispiel-ausgabe {
   border: 5px solid grey;
   border-radius: 5px;
